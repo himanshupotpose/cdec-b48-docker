@@ -1,58 +1,157 @@
-# Docker
 
-## Monolithic vs Microservices
+# 🚀 Docker 
+
+## 🔹 Monolithic vs Microservices
 Monolithic :-
-A monolithic application is a single tired software application in which all components are combined into one program from a single 
-platform.
+📖 Definition
+Monolithic Architecture is a software architecture style in which the entire application is built as a single, unified codebase.
+All components such as UI, business logic, and database access are tightly coupled and deployed together as one unit.
+
+🔹 Key Characteristics :-
+
+🧱 Single codebase
+🔗 Tightly coupled components
+🚫 Difficult to scale individual features
+🔁 Single deployment process
 
 Microservices :-
-A microservices application is an architectural style where the application is composed of small independent services that communicate
-over APIs.
+📖 Definition
+Microservices Architecture is an architectural style in which an application is divided into small, independent services,
+each responsible for a specific business functionality and communicating with other services through APIs.
 
-## Traditional vs Vertualization vs Containerization
+🔹 Key Characteristics :-
+
+🧩 Independent services
+🚀 Easy and flexible scalability
+🔄 Independent deployment
+✅ Better fault isolation
+
+### 📌 Traditional vs Vertualization vs Containerization
 Traditional :-
-Traditional deployment is a manual process where code is deployed to production by a team or individual.
+📖 Definition
+Traditional Deployment is a method where an application is installed and run directly on a physical server or operating system without any abstraction layer.
 
-It means :-
-1. Developers write code.
-2. Give it to operations team.
-3. Teams manually installs , configures and deployed it on servers.
+🔹 Key Characteristics :-
 
-Virtualization :-
-Virtualization is a technology that allows you to create multiple virtual computers (VMs) on a single physical computer.
+🖥️ Runs directly on the host OS
+⚙️ Manual installation and configuration
+❌ Environment dependency issues
+🐢 Slow deployment and scaling
 
-Containerazation :-
-Containerazation is a technology used in devops to package an application along with all its dependencies (libraries ,framework ,configs) into a single
-unit called a  container so it can run anywhere without issues.
+🖥️ Virtualization :-
+📖 Definition
+Virtualization is a technology that allows multiple Virtual Machines (VMs) to run on a single physical server using a hypervisor, where each VM has its own operating system.
 
-## What is Docker?
-Docker is an open source platform that automates the deployment of application in containers.
+🔹 Key Characteristics :-
+🧠 Each VM has a separate OS
+⚙️ Managed by a hypervisor (VMware, VirtualBox)
+🐘 Heavy resource usage
+⏳ Slower startup compared to containers
+
+📦 Containerization
+📖 Definition
+Containerization is a lightweight virtualization technique where applications run in isolated containers while sharing the host operating system kernel.
+
+🔹 Key Characteristics :-
+🚀 Lightweight and fast
+🐳 Uses Docker or similar tools
+🔁 Consistent environment across systems
+⚡ Starts in seconds
+
+🐳 What is Docker?
+
+📖 Definition
+Docker is an open-source containerization platform that allows developers to build, package, and run applications inside lightweight, portable containers.
+
+Docker ensures that an application runs consistently across all environments — from a developer’s laptop to production servers.
 
 
-## Installation of Docker
+⚙️ Installation of Docker (Ubuntu / EC2)
+
+
+📌 Follow the steps below to install and verify Docker on an Ubuntu-based system
+
+🔄 Update System Packages
 sudo apt update
+
+📦 Install Docker Engine
 sudo apt install docker.io -y
+
+▶️ Start Docker Service
 sudo systemctl start docker
+
+🔁 Enable Docker on System Boot
 sudo systemctl enable docker
+
+🔍 Check Docker Service Status
 sudo systemctl status docker
+
+🐳 Verify Docker Installation
 docker --version
 
 
-## Docker Commands
+🐳 Docker Commands
 
-```shell
-docker run [ContainerImage]     # to run a container
-docker run -d [ContainerImage]  # to run a container in detached mode
-docker ps               # to list running containers
-docker ps -a             # to list all containers
-docker create [ContainerImage]  # to create a container
-docker start [ContainerID]     # to start a container
-docker stop [ContainerID]      # to stop a container
-docker rm [ContainerID]        # to remove a container]
-docker rm -f [ContainerID]     # to force remove a container
-docker run -p [HostPort]:[ContainerPort] [ContainerImage]  # to expose a port
-docker exec -it [ContainerID] bash  # to attach / access to a container
-docker run -P [ContainerImage]  # to expose all ports on random ports from 32768 to 61000
-docker logs [ContainerID]   # to check container logs
-docker stats [ContainerID]  # to check container resources
-```
+📌 Commonly used Docker commands to run, manage, monitor, and debug containers
+
+docker run [IMAGE]                  
+# Create and run a container from an image
+
+docker run -d [IMAGE]               
+# Run a container in detached (background) mode
+
+docker ps                           
+# List all running containers
+
+docker ps -a                        
+# List all containers (running + stopped)
+
+docker create [IMAGE]               
+# Create a container without starting it
+
+docker start [CONTAINER_ID]         
+# Start an existing (stopped) container
+
+docker stop [CONTAINER_ID]          
+# Stop a running container
+
+docker rm [CONTAINER_ID]            
+# Remove a stopped container
+
+docker rm -f [CONTAINER_ID]         
+# Force remove a container (running or stopped)
+
+docker run -p [HOST_PORT]:[CONTAINER_PORT] [IMAGE]
+# Map a container port to a specific host port
+
+docker run -P [IMAGE]               
+# Expose all container ports on random host ports (32768–61000)
+
+docker exec -it [CONTAINER_ID] bash 
+# Access the running container terminal
+
+docker logs [CONTAINER_ID]          
+# View container logs
+
+docker stats [CONTAINER_ID]         
+# View real-time CPU & memory usage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
