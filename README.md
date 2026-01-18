@@ -22,7 +22,7 @@ Virtualization :-
 Virtualization is a technology that allows you to create multiple virtual computers (VMs) on a single physical computer.
 
 Containerazation :-
-Containerazation is a technology used in devops to package an application along with all its dependencies (libraries ,framework . configs) into a single
+Containerazation is a technology used in devops to package an application along with all its dependencies (libraries ,framework ,configs) into a single
 unit called a  container so it can run anywhere without issues.
 
 ## What is Docker?
